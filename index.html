@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Superloop</title>
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <img src="img/logo.png" alt="Superloop">
+
+            <h1>Wie doet er mee vandaag?</h1>
+
+            <form name="superloop">
+
+                <ul class="people">
+                    <li><label><input value="Niek" name="people[]" type="checkbox"> Niek</label></li>
+                    <li><label><input value="Nico" name="people[]" type="checkbox"> Nico</label></li>
+                    <li><label><input value="Job" name="people[]" type="checkbox"> Job</label></li>
+                    <li><label><input value="Kelly" name="people[]" type="checkbox"> Kelly</label></li>
+                    <li><label><input value="Roald" name="people[]" type="checkbox"> Roald</label></li>
+                    <li class="separator">----------------------------</li>
+                    <li><label><input value="Max" name="people[]" type="checkbox"> Max</label></li>
+                    <li><label><input value="Paco" name="people[]" type="checkbox"> Paco</label></li>
+                    <li><label><input value="Jort" name="people[]" type="checkbox"> Jort</label></li>
+                    <li><label><input value="Rogier" name="people[]" type="checkbox"> Rogier</label></li>
+                    <li><label><input value="Hendrik Jan" name="people[]" type="checkbox"> Hendrik Jan</label></li>
+                </ul>
+
+                <p>
+                    Iemand anders erbij? (meerdere namen met een kommaatje scheiden dus)<br>
+                    <input type="text" name="other_people">
+                </p>
+
+                <p>
+                    Hoeveel lopers?
+                    <select name="num_runners">
+                        <option value="1">1</option>
+                    </select>
+                </p>
+
+                <button type="submit">Wie doet de Superloop?</button>
+            </form>
+        </div>
+
+        <script src="js/vendor/jquery-1.10.2.min.js"></script>
+        <script src="js/vendor/color.js"></script>
+        <script src="js/vendor/goo.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
