@@ -87,6 +87,11 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     position: relative;
 }
