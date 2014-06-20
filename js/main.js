@@ -310,7 +310,7 @@ $(function() {
                 buffer = b;
             });
         };
-        xhr.open("GET", "/audio/fireworks-exploding.wav", true);
+        xhr.open("GET", "audio/fireworks-exploding.wav", true);
         xhr.send(null);
     }
 
