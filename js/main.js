@@ -31,15 +31,20 @@ $(function() {
             return alert('Minder mensen dan lopers, deze systeemtheorie is wack.');
         }
 
-        // Pick a runner!
-        var index = Math.floor(random(0, people.length));
-        console.log(index);
-        var winner = people[index];
+        var $submitButton = $this.find('button[type="submit"]');
+        $submitButton.attr("disabled", true);
 
-        $inputContainer.hide();
-        $resultContainer.show();
-        $resultContainer.find('.winner').text(winner);
-        launch = true;
+        // Pick a runner!
+        accurateRandom(0, people.length - 1, function(index) {
+            $submitButton.attr("disabled", false);
+
+            var winner = people[index];
+
+            $inputContainer.hide();
+            $resultContainer.show();
+            $resultContainer.find('.winner').text(winner);
+            launch = true;
+        });
     });
 
     $('button[type="reset"]').on('click', function(event) {
@@ -47,6 +52,27 @@ $(function() {
         $resultContainer.hide();
         $inputContainer.show();
     });
+
+    function accurateRandom(min, max, callback) {
+        var url = 'http://www.random.org/integers/';
+        var data = {
+            num: 1,
+            min: min,
+            max: max,
+            col: 1,
+            base: 10,
+            format: 'plain'
+        };
+
+        $.ajax({
+            url: url,
+            data: data,
+            success: function(data) {
+                callback(parseInt(data, 10));
+            }
+        });
+    }
+    window.random = accurateRandom;
 
     var $body = $('body');
     var Color = net.brehaut.Color;
