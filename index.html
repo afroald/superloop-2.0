@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <div class="container">
+        <div class="input-container container">
             <img src="img/logo.png" alt="Superloop">
 
             <h1>Wie doet er mee vandaag?</h1>
@@ -37,11 +37,20 @@
                     Hoeveel lopers?
                     <select name="num_runners">
                         <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
                 </p>
 
                 <button type="submit">Wie doet de Superloop?</button>
             </form>
+        </div>
+
+        <div class="result-container container" style="display: none;">
+            <h1>Succes: <span class="winner"></span>!</h1>
+            <button type="reset">Nog een keer!</button>
         </div>
 
         <script src="js/vendor/jquery-2.1.1.min.js"></script>

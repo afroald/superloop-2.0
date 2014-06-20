@@ -1,5 +1,53 @@
 $(function() {
 
+    var $inputContainer  = $('.input-container'),
+        $resultContainer = $('.result-container');
+
+    $('form[name="superloop"]').on('submit', function(event) {
+        // Make sure the form doesn't actually submit
+        event.preventDefault();
+
+        // Cache a jquery wrapped form element
+        var $this = $(this);
+
+        // Get all checked people
+        var people = $this.find('input[name="people[]"]:checked').map(function(index, person) {
+                return $(person).val();
+            }).get();
+
+        // Split the extra people and add them to the existing people array
+        people = people.concat($this.find('input[name="other_people"]').val().split(/\s*\,\s*/));
+
+        // Splitting an empty string with a regex returns an empty string,
+        // so we there might be an empty string in the people array.
+        // Filter it.
+        people = people.filter(String);
+
+        // Get the number of runners
+        var numRunners = $this.find('select[name="num_runners"]').val();
+
+        if (numRunners > people.length) {
+            // Oh no!
+            return alert('Minder mensen dan lopers, deze systeemtheorie is wack.');
+        }
+
+        // Pick a runner!
+        var index = Math.floor(random(0, people.length));
+        console.log(index);
+        var winner = people[index];
+
+        $inputContainer.hide();
+        $resultContainer.show();
+        $resultContainer.find('.winner').text(winner);
+        launch = true;
+    });
+
+    $('button[type="reset"]').on('click', function(event) {
+        launch = false;
+        $resultContainer.hide();
+        $inputContainer.show();
+    });
+
     var $body = $('body');
     var Color = net.brehaut.Color;
 

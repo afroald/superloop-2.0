@@ -130,3 +130,11 @@ button[type=submit] {
 
     margin: 40px auto;
 }
+
+.result-container {
+    text-align: center;
+}
+
+.result-container h1 {
+    font-size: 4em;
+}
