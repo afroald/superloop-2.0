@@ -3,7 +3,8 @@ $(function() {
     var $body = $('body');
     var Color = net.brehaut.Color;
 
-    var launchDelay = 5,
+    var launch = false,
+        launchDelay = 5,
         ticksSinceLaunch = 0;
 
     var ctx,
@@ -54,7 +55,7 @@ $(function() {
                     particles[ i ].update( i );
                 }
 
-                if( ticksSinceLaunch >= launchDelay ) {
+                if( ticksSinceLaunch >= launchDelay && launch ) {
                     // start the firework at the bottom middle of the screen, then set the random target coordinates, the random y coordinates will be set within the range of the top half of the screen
                     fireworks.push( new Firework( g.width / 2, g.height, random( 0, g.width ), random( 0, g.height / 2 ) ) );
                     ticksSinceLaunch = 0;
