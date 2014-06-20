@@ -236,7 +236,7 @@ $(function() {
                 buffer = b;
             });
         };
-        xhr.open("GET", "https://dl.dropboxusercontent.com/u/162276646/Sounds/117616__soundmary__fireworks-exploding-1.wav", true);
+        xhr.open("GET", "/audio/fireworks-exploding.wav", true);
         xhr.send(null);
     }
 
