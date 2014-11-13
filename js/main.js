@@ -95,7 +95,7 @@ $(function() {
                 g.ctx.fillStyle = color.shiftHue(180).toCSS();
                 g.ctx.fillRect(0, 0, g.width, g.height);
             }
-        })
+        }),
         g = new Goo({
             userData: {
                 previousTick: new Date().getTime()
@@ -218,7 +218,7 @@ $(function() {
             this.x += vx;
             this.y += vy;
         }
-    }
+    };
 
     // draw firework
     Firework.prototype.draw = function() {
@@ -233,7 +233,7 @@ $(function() {
         // draw the target for this firework with a pulsing circle
         ctx.arc( this.tx, this.ty, this.targetRadius, 0, Math.PI * 2 );
         ctx.stroke();
-    }
+    };
 
     // create particle
     function Particle( x, y ) {
@@ -278,7 +278,7 @@ $(function() {
         if( this.alpha <= this.decay ) {
             particles.splice( index, 1 );
         }
-    }
+    };
 
     // draw particle
     Particle.prototype.draw = function() {
@@ -289,7 +289,7 @@ $(function() {
         // ctx.strokeStyle = 'hsla(' + this.hue + ', 100%, ' + this.brightness + '%, ' + this.alpha + ')';
         ctx.strokeStyle = color.setAlpha(this.alpha).toCSS();
         ctx.stroke();
-    }
+    };
 
     // create particle group/explosion
     function createParticles( x, y ) {
@@ -328,5 +328,5 @@ $(function() {
             sound.playbackRate.value = random(0.6, 1.2);
             sound.start(0);
         }
-    };
+    }
 });
