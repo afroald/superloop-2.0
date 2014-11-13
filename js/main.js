@@ -49,6 +49,7 @@ $(function() {
 
     $('button[type="reset"]').on('click', function(event) {
         launch = false;
+        clearFireworks();
         $resultContainer.hide();
         $inputContainer.show();
     });
@@ -297,6 +298,11 @@ $(function() {
         while( particleCount-- ) {
             particles.push( new Particle( x, y ) );
         }
+    }
+
+    function clearFireworks() {
+        fireworks = [];
+        particles = [];
     }
 
     var audio = new(window.AudioContext || window.webkitAudioContext)();
