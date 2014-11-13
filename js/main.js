@@ -320,7 +320,7 @@ $(function() {
             sound.buffer = buffer;
             sound.connect(audio.destination);
             sound.playbackRate.value = random(0.6, 1.2);
-            sound.play ? sound.play(0) : sound.noteOn(0);
+            sound.start(0);
         }
     };
 });
